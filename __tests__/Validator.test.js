@@ -7,35 +7,35 @@ describe('Validator', () => {
         validator = new Validator();
     });
 
-    test('valid username', () => {
+    test('Действительное имя пользователя', () => {
         expect(validator.validateUsername('valid_username-123')).toBe(true);
     });
 
-    test('username with consecutive digits', () => {
+    test('Имя пользователя с последовательными цифрами', () => {
         expect(validator.validateUsername('user1234name')).toBe(false);
     });
 
-    test('username starts with digit', () => {
+    test('Имя пользователя начинается с цифры', () => {
         expect(validator.validateUsername('1username')).toBe(false);
     });
 
-    test('username ends with digit', () => {
+    test('Имя пользователя заканчивается цифрой', () => {
         expect(validator.validateUsername('username1')).toBe(false);
     });
 
-    test('username starts with underscore', () => {
+    test('Имя пользователя начинается с подчеркивания', () => {
         expect(validator.validateUsername('_username')).toBe(false);
     });
 
-    test('username ends with underscore', () => {
+    test('Имя пользователя заканчивается подчеркиванием', () => {
         expect(validator.validateUsername('username_')).toBe(false);
     });
 
-    test('username starts with hyphen', () => {
+    test('Имя пользователя начинается с дефиса', () => {
         expect(validator.validateUsername('-username')).toBe(false);
     });
 
-    test('username ends with hyphen', () => {
+    test('Имя пользователя заканчивается дефисом', () => {
         expect(validator.validateUsername('username-')).toBe(false);
     });
 });
